@@ -1,0 +1,5 @@
+venv/
+__pycache__/
+mine_data/
+mine_results/
+models/all/
