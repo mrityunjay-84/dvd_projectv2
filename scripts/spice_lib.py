@@ -132,6 +132,25 @@ CASES = {  # gate / body voltage as a function of VDD
 }
 
 
+RAIL_FRACTION = {"pmos_off": 0.60}    # share of rail-type samples per case (TA-approved; others uniform)
+
+
+def rail_place(s, rng):
+    """Rail-type bias for an OFF transistor (overwrites vd, vs):
+    75% full rail - one end within 50 mV of 0 V, the other within 50 mV of VDD;
+    25% stack     - one end within 50 mV of a rail, the other uniform in [0, VDD]."""
+    v = s["vdd"]
+    if rng.random() < 0.75:
+        a, b = rng.uniform(0, 0.05), v - rng.uniform(0, 0.05)
+    else:
+        a = rng.uniform(0, 0.05) if rng.random() < 0.5 else v - rng.uniform(0, 0.05)
+        b = rng.uniform(0, v)
+    if rng.random() < 0.5:
+        a, b = b, a
+    s["vd"], s["vs"] = float(np.clip(a, 0, v)), float(np.clip(b, 0, v))
+    return s
+
+
 def draw_samples(case, n, rng):
     """Draw n samples per the brief, Section 4 (VDD drawn first)."""
     kind, vg_f, vb_f = CASES[case]

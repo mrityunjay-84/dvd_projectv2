@@ -1,6 +1,9 @@
 """Step 1 - generate the four single-transistor datasets (NMOS/PMOS x ON/OFF).
 
 Run from the project root:   python scripts/01_generate_data.py
+Every parameter is drawn as in Section 4 of the brief. PMOS OFF only (TA-approved): 60% of its
+samples get rail-type drain/source voltages (spice_lib.rail_place), so that the model learns the
+full-rail bias an OFF PMOS holds inside gates; all other parameters are drawn as usual.
 Outputs:
   data/<case>.csv                       10,000 rows each; columns as required by the brief
   netlists/transistor/<case>_example.cir  first sample of each case, runnable on its own:
@@ -32,6 +35,9 @@ def main():
     for k, (case, (kind, _, _)) in enumerate(L.CASES.items()):
         rng = np.random.default_rng([SEED, k])
         samples = L.draw_samples(case, N_SAMPLES, rng)
+        if case in L.RAIL_FRACTION:
+            rr = np.random.default_rng([SEED, k, 1])            # separate stream for the rail placement
+            samples = [L.rail_place(s, rr) if rr.random() < L.RAIL_FRACTION[case] else s for s in samples]
         t0 = time.time()
         cur = L.simulate_fets(kind, samples)
         n_bad = int(np.isnan(cur).any(axis=1).sum())

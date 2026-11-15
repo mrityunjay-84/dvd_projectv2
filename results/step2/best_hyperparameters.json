@@ -1,0 +1,389 @@
+{
+  "nmos_off": {
+    "mlp": {
+      "b": {
+        "hidden": [
+          64,
+          64,
+          64
+        ],
+        "alpha": 1e-06,
+        "lr": 0.001,
+        "max_iter": 4000,
+        "patience": 150
+      },
+      "c": {
+        "hidden": [
+          256,
+          256
+        ],
+        "alpha": 1e-06,
+        "lr": 0.001,
+        "max_iter": 4000,
+        "patience": 150,
+        "form": "conductance"
+      },
+      "g": {
+        "hidden": [
+          128,
+          128,
+          128
+        ],
+        "alpha": 1e-06,
+        "lr": 0.001,
+        "max_iter": 4000,
+        "patience": 150
+      }
+    },
+    "poly_ridge": {
+      "b": {
+        "degree": 4,
+        "alpha": 0.0001
+      },
+      "c": {
+        "degree": 4,
+        "alpha": 0.01,
+        "form": "conductance"
+      },
+      "g": {
+        "degree": 4,
+        "alpha": 0.01
+      }
+    },
+    "random_forest": {
+      "b": {
+        "n_estimators": 300,
+        "max_features": 1.0,
+        "min_samples_leaf": 1
+      },
+      "c": {
+        "n_estimators": 300,
+        "max_features": 0.66,
+        "min_samples_leaf": 1,
+        "form": "conductance"
+      },
+      "g": {
+        "n_estimators": 300,
+        "max_features": 0.66,
+        "min_samples_leaf": 1
+      }
+    },
+    "xgboost": {
+      "b": {
+        "n_estimators": 3000,
+        "learning_rate": 0.03,
+        "max_depth": 4,
+        "min_child_weight": 1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+      },
+      "c": {
+        "n_estimators": 3000,
+        "learning_rate": 0.03,
+        "max_depth": 4,
+        "min_child_weight": 1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "form": "conductance"
+      },
+      "g": {
+        "n_estimators": 3000,
+        "learning_rate": 0.03,
+        "max_depth": 4,
+        "min_child_weight": 1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+      }
+    }
+  },
+  "nmos_on": {
+    "mlp": {
+      "b": {
+        "hidden": [
+          128,
+          128,
+          128
+        ],
+        "alpha": 0.0001,
+        "lr": 0.001,
+        "max_iter": 4000,
+        "patience": 150
+      },
+      "c": {
+        "hidden": [
+          128,
+          128,
+          128
+        ],
+        "alpha": 1e-06,
+        "lr": 0.001,
+        "max_iter": 4000,
+        "patience": 150,
+        "form": "conductance"
+      },
+      "g": {
+        "hidden": [
+          256,
+          256
+        ],
+        "alpha": 1e-06,
+        "lr": 0.001,
+        "max_iter": 4000,
+        "patience": 150
+      }
+    },
+    "poly_ridge": {
+      "b": {
+        "degree": 4,
+        "alpha": 0.01
+      },
+      "c": {
+        "degree": 4,
+        "alpha": 0.01,
+        "form": "conductance"
+      },
+      "g": {
+        "degree": 4,
+        "alpha": 0.01
+      }
+    },
+    "random_forest": {
+      "b": {
+        "n_estimators": 300,
+        "max_features": 1.0,
+        "min_samples_leaf": 1
+      },
+      "c": {
+        "n_estimators": 300,
+        "max_features": 1.0,
+        "min_samples_leaf": 1,
+        "form": "conductance"
+      },
+      "g": {
+        "n_estimators": 300,
+        "max_features": 1.0,
+        "min_samples_leaf": 1
+      }
+    },
+    "xgboost": {
+      "b": {
+        "n_estimators": 3000,
+        "learning_rate": 0.03,
+        "max_depth": 4,
+        "min_child_weight": 1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+      },
+      "c": {
+        "n_estimators": 3000,
+        "learning_rate": 0.03,
+        "max_depth": 4,
+        "min_child_weight": 1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "form": "conductance"
+      },
+      "g": {
+        "n_estimators": 3000,
+        "learning_rate": 0.03,
+        "max_depth": 4,
+        "min_child_weight": 1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+      }
+    }
+  },
+  "pmos_off": {
+    "mlp": {
+      "b": {
+        "hidden": [
+          256,
+          256
+        ],
+        "alpha": 1e-06,
+        "lr": 0.001,
+        "max_iter": 4000,
+        "patience": 150
+      },
+      "c": {
+        "hidden": [
+          128,
+          128,
+          128
+        ],
+        "alpha": 1e-06,
+        "lr": 0.001,
+        "max_iter": 4000,
+        "patience": 150,
+        "form": "conductance"
+      },
+      "g": {
+        "hidden": [
+          128,
+          128,
+          128
+        ],
+        "alpha": 0.0001,
+        "lr": 0.001,
+        "max_iter": 4000,
+        "patience": 150
+      }
+    },
+    "poly_ridge": {
+      "b": {
+        "degree": 4,
+        "alpha": 1e-08
+      },
+      "c": {
+        "degree": 4,
+        "alpha": 0.0001,
+        "form": "conductance"
+      },
+      "g": {
+        "degree": 4,
+        "alpha": 0.01
+      }
+    },
+    "random_forest": {
+      "b": {
+        "n_estimators": 300,
+        "max_features": 0.66,
+        "min_samples_leaf": 1
+      },
+      "c": {
+        "n_estimators": 300,
+        "max_features": 0.66,
+        "min_samples_leaf": 1,
+        "form": "conductance"
+      },
+      "g": {
+        "n_estimators": 300,
+        "max_features": 0.66,
+        "min_samples_leaf": 1
+      }
+    },
+    "xgboost": {
+      "b": {
+        "n_estimators": 3000,
+        "learning_rate": 0.03,
+        "max_depth": 4,
+        "min_child_weight": 1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+      },
+      "c": {
+        "n_estimators": 3000,
+        "learning_rate": 0.03,
+        "max_depth": 4,
+        "min_child_weight": 1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "form": "conductance"
+      },
+      "g": {
+        "n_estimators": 3000,
+        "learning_rate": 0.03,
+        "max_depth": 4,
+        "min_child_weight": 1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+      }
+    }
+  },
+  "pmos_on": {
+    "mlp": {
+      "b": {
+        "hidden": [
+          128,
+          128,
+          128
+        ],
+        "alpha": 1e-06,
+        "lr": 0.001,
+        "max_iter": 4000,
+        "patience": 150
+      },
+      "c": {
+        "hidden": [
+          256,
+          256
+        ],
+        "alpha": 1e-06,
+        "lr": 0.001,
+        "max_iter": 4000,
+        "patience": 150,
+        "form": "conductance"
+      },
+      "g": {
+        "hidden": [
+          256,
+          256
+        ],
+        "alpha": 1e-06,
+        "lr": 0.001,
+        "max_iter": 4000,
+        "patience": 150
+      }
+    },
+    "poly_ridge": {
+      "b": {
+        "degree": 4,
+        "alpha": 0.01
+      },
+      "c": {
+        "degree": 4,
+        "alpha": 0.01,
+        "form": "conductance"
+      },
+      "g": {
+        "degree": 4,
+        "alpha": 0.01
+      }
+    },
+    "random_forest": {
+      "b": {
+        "n_estimators": 300,
+        "max_features": 1.0,
+        "min_samples_leaf": 1
+      },
+      "c": {
+        "n_estimators": 300,
+        "max_features": 1.0,
+        "min_samples_leaf": 1,
+        "form": "conductance"
+      },
+      "g": {
+        "n_estimators": 300,
+        "max_features": 1.0,
+        "min_samples_leaf": 1
+      }
+    },
+    "xgboost": {
+      "b": {
+        "n_estimators": 3000,
+        "learning_rate": 0.03,
+        "max_depth": 4,
+        "min_child_weight": 1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+      },
+      "c": {
+        "n_estimators": 3000,
+        "learning_rate": 0.03,
+        "max_depth": 4,
+        "min_child_weight": 1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "form": "conductance"
+      },
+      "g": {
+        "n_estimators": 3000,
+        "learning_rate": 0.03,
+        "max_depth": 4,
+        "min_child_weight": 1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+      }
+    }
+  }
+}

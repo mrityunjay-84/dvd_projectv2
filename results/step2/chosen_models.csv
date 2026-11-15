@@ -1,0 +1,5 @@
+case,winner_by_median_avg,winner_by_p95_avg,winner_by_p95_worst,winner_by_r2_log_avg,chosen,all_rules_agree
+nmos_on,mlp,mlp,mlp,mlp,mlp,True
+nmos_off,mlp,mlp,mlp,mlp,mlp,True
+pmos_on,mlp,mlp,mlp,mlp,mlp,True
+pmos_off,mlp,mlp,mlp,mlp,mlp,True

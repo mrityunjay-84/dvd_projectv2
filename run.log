@@ -1,0 +1,180 @@
+mlp: 64 fits, 16 in parallel (16 cores; capped by free memory, ~0.3 GB per fit)
+[Parallel(n_jobs=16)]: Using backend LokyBackend with 16 concurrent workers.
+[Parallel(n_jobs=16)]: Done  46 out of  64 | elapsed: 17.3min remaining:  6.8min
+[Parallel(n_jobs=16)]: Done  59 out of  64 | elapsed: 21.8min remaining:  1.8min
+[Parallel(n_jobs=16)]: Done  64 out of  64 | elapsed: 22.6min finished
+xgboost: 96 fits, 11 in parallel (16 cores; capped by free memory, ~0.3 GB per fit)
+[Parallel(n_jobs=11)]: Using backend LokyBackend with 11 concurrent workers.
+[Parallel(n_jobs=11)]: Done  50 tasks      | elapsed:   53.9s
+[Parallel(n_jobs=11)]: Done  96 out of  96 | elapsed:  1.8min finished
+random_forest: 96 fits, 2 in parallel (16 cores; capped by free memory, ~1.0 GB per fit)
+[Parallel(n_jobs=2)]: Using backend LokyBackend with 2 concurrent workers.
+[Parallel(n_jobs=2)]: Done  14 tasks      | elapsed:  1.1min
+[Parallel(n_jobs=2)]: Done  68 tasks      | elapsed:  5.3min
+[Parallel(n_jobs=2)]: Done  96 out of  96 | elapsed:  7.6min finished
+poly_ridge: 192 fits, 2 in parallel (16 cores; capped by free memory, ~2.0 GB per fit)
+[Parallel(n_jobs=2)]: Using backend LokyBackend with 2 concurrent workers.
+[Parallel(n_jobs=2)]: Done  20 tasks      | elapsed:   20.7s
+[Parallel(n_jobs=2)]: Done  74 tasks      | elapsed:  1.8min
+[Parallel(n_jobs=2)]: Done 164 tasks      | elapsed:  4.0min
+[Parallel(n_jobs=2)]: Done 192 out of 192 | elapsed:  4.9min finished
+written: /home/mrityunjay/dvd_projectv2/results/step2/tuning_results.csv /home/mrityunjay/dvd_projectv2/results/step2/best_hyperparameters.json
+[Parallel(n_jobs=6)]: Using backend LokyBackend with 6 concurrent workers.
+[Parallel(n_jobs=6)]: Done   9 out of  16 | elapsed:  2.8min remaining:  2.1min
+[Parallel(n_jobs=6)]: Done  13 out of  16 | elapsed:  3.9min remaining:   53.3s
+[Parallel(n_jobs=6)]: Done  16 out of  16 | elapsed:  6.8min finished
+    case    model_type current  r2_log  median    p95
+ nmos_on    poly_ridge      ib  0.9942  0.1149 0.4747
+ nmos_on    poly_ridge      id  0.9990  0.0501 0.2225
+ nmos_on    poly_ridge      ig  0.9964  0.0507 0.2559
+ nmos_on    poly_ridge      is  0.9991  0.0500 0.2221
+ nmos_on random_forest      ib  0.9810  0.2316 0.9818
+ nmos_on random_forest      id  0.9946  0.1225 0.6511
+ nmos_on random_forest      ig  0.9910  0.1302 0.4725
+ nmos_on random_forest      is  0.9945  0.1225 0.6567
+ nmos_on       xgboost      ib  0.9972  0.0978 0.3029
+ nmos_on       xgboost      id  0.9987  0.0382 0.2226
+ nmos_on       xgboost      ig  0.9988  0.0511 0.1618
+ nmos_on       xgboost      is  0.9993  0.0382 0.2215
+ nmos_on           mlp      ib  1.0000  0.0078 0.0286
+ nmos_on           mlp      id  0.9999  0.0056 0.0266
+ nmos_on           mlp      ig  0.9999  0.0069 0.0295
+ nmos_on           mlp      is  1.0000  0.0056 0.0266
+nmos_off    poly_ridge      ib  0.9987  0.0873 0.3844
+nmos_off    poly_ridge      id  0.9412  0.1180 1.3678
+nmos_off    poly_ridge      ig  0.9997  0.0085 0.0463
+nmos_off    poly_ridge      is  0.9545  0.1190 1.7912
+nmos_off random_forest      ib  0.9989  0.0348 0.2527
+nmos_off random_forest      id  0.9426  0.1429 1.3056
+nmos_off random_forest      ig  0.9933  0.0737 0.2962
+nmos_off random_forest      is  0.9434  0.1561 1.5867
+nmos_off       xgboost      ib  0.9997  0.0324 0.1649
+nmos_off       xgboost      id  0.9855  0.0587 0.5887
+nmos_off       xgboost      ig  0.9991  0.0296 0.1065
+nmos_off       xgboost      is  0.9832  0.0571 0.6227
+nmos_off           mlp      ib  1.0000  0.0096 0.0337
+nmos_off           mlp      id  0.9988  0.0063 0.0650
+nmos_off           mlp      ig  1.0000  0.0028 0.0108
+nmos_off           mlp      is  0.9978  0.0067 0.0780
+ pmos_on    poly_ridge      ib  0.9951  0.0961 0.4022
+ pmos_on    poly_ridge      id  0.9995  0.0468 0.1611
+ pmos_on    poly_ridge      ig  0.9990  0.0562 0.1797
+ pmos_on    poly_ridge      is  0.9995  0.0468 0.1604
+ pmos_on random_forest      ib  0.9813  0.2435 1.0383
+ pmos_on random_forest      id  0.9940  0.1137 0.6230
+ pmos_on random_forest      ig  0.9802  0.2616 1.2224
+ pmos_on random_forest      is  0.9940  0.1137 0.6230
+ pmos_on       xgboost      ib  0.9977  0.0929 0.3194
+ pmos_on       xgboost      id  0.9992  0.0400 0.2169
+ pmos_on       xgboost      ig  0.9986  0.0739 0.2500
+ pmos_on       xgboost      is  0.9992  0.0400 0.2175
+ pmos_on           mlp      ib  1.0000  0.0100 0.0322
+ pmos_on           mlp      id  1.0000  0.0048 0.0207
+ pmos_on           mlp      ig  1.0000  0.0084 0.0227
+ pmos_on           mlp      is  1.0000  0.0048 0.0209
+pmos_off    poly_ridge      ib -1.8047  0.1020 0.3946
+pmos_off    poly_ridge      id  0.9935  0.0770 0.7202
+pmos_off    poly_ridge      ig  0.9995  0.0059 0.0582
+pmos_off    poly_ridge      is  0.9945  0.0795 0.7991
+pmos_off random_forest      ib  0.9983  0.0697 0.4508
+pmos_off random_forest      id  0.9927  0.2209 1.3096
+pmos_off random_forest      ig  0.9941  0.0725 0.3514
+pmos_off random_forest      is  0.9913  0.2251 1.3108
+pmos_off       xgboost      ib  0.9995  0.0493 0.2320
+pmos_off       xgboost      id  0.9980  0.0761 0.4065
+pmos_off       xgboost      ig  0.9992  0.0283 0.1126
+pmos_off       xgboost      is  0.9985  0.0778 0.4576
+pmos_off           mlp      ib  1.0000  0.0125 0.0513
+pmos_off           mlp      id  0.9999  0.0135 0.0493
+pmos_off           mlp      ig  1.0000  0.0052 0.0187
+pmos_off           mlp      is  0.9999  0.0140 0.0544
+
+     case    model_type  r2_log_avg  median_avg  p95_avg  p95_worst
+ nmos_on    poly_ridge      0.9972      0.0664   0.2938     0.4747
+ nmos_on random_forest      0.9903      0.1517   0.6905     0.9818
+ nmos_on       xgboost      0.9985      0.0563   0.2272     0.3029
+ nmos_on           mlp      0.9999      0.0064   0.0278     0.0295
+nmos_off    poly_ridge      0.9735      0.0832   0.8974     1.7912
+nmos_off random_forest      0.9695      0.1019   0.8603     1.5867
+nmos_off       xgboost      0.9919      0.0445   0.3707     0.6227
+nmos_off           mlp      0.9991      0.0063   0.0469     0.0780
+ pmos_on    poly_ridge      0.9983      0.0615   0.2258     0.4022
+ pmos_on random_forest      0.9874      0.1831   0.8767     1.2224
+ pmos_on       xgboost      0.9987      0.0617   0.2510     0.3194
+ pmos_on           mlp      1.0000      0.0070   0.0241     0.0322
+pmos_off    poly_ridge      0.2957      0.0661   0.4930     0.7991
+pmos_off random_forest      0.9941      0.1470   0.8556     1.3108
+pmos_off       xgboost      0.9988      0.0579   0.3022     0.4576
+pmos_off           mlp      0.9999      0.0113   0.0434     0.0544
+    case winner_by_median_avg winner_by_p95_avg winner_by_p95_worst winner_by_r2_log_avg chosen  all_rules_agree
+ nmos_on                  mlp               mlp                 mlp                  mlp    mlp             True
+nmos_off                  mlp               mlp                 mlp                  mlp    mlp             True
+ pmos_on                  mlp               mlp                 mlp                  mlp    mlp             True
+pmos_off                  mlp               mlp                 mlp                  mlp    mlp             True
+[Parallel(n_jobs=16)]: Using backend LokyBackend with 16 concurrent workers.
+[Parallel(n_jobs=16)]: Done   2 out of   4 | elapsed:  3.6min remaining:  3.6min
+[Parallel(n_jobs=16)]: Done   4 out of   4 | elapsed:  5.4min finished
+
+Test set (chosen models)
+     case model_type  networks_averaged current  r2_log  median    p95  wrong_sign
+ nmos_on        mlp                  1      id  1.0000  0.0052 0.0270           0
+ nmos_on        mlp                  1      ig  0.9999  0.0071 0.0286           0
+ nmos_on        mlp                  1      is  1.0000  0.0052 0.0270           0
+ nmos_on        mlp                  1      ib  1.0000  0.0079 0.0268           0
+nmos_off        mlp                  3      id  0.9992  0.0073 0.0479           2
+nmos_off        mlp                  3      ig  1.0000  0.0030 0.0121           0
+nmos_off        mlp                  3      is  0.9997  0.0075 0.0468           0
+nmos_off        mlp                  3      ib  1.0000  0.0059 0.0274           0
+ pmos_on        mlp                  1      id  1.0000  0.0054 0.0212           0
+ pmos_on        mlp                  1      ig  1.0000  0.0084 0.0236           0
+ pmos_on        mlp                  1      is  1.0000  0.0054 0.0212           0
+ pmos_on        mlp                  1      ib  1.0000  0.0101 0.0354           0
+pmos_off        mlp                  3      id  0.9998  0.0129 0.0491           0
+pmos_off        mlp                  3      ig  1.0000  0.0082 0.0197           0
+pmos_off        mlp                  3      is  1.0000  0.0129 0.0487           0
+pmos_off        mlp                  3      ib  1.0000  0.0095 0.0368           0
+SPICE: 3600 simulations in 2 s
+ gate inputs spice_median_A ml_median_A   bias median_error p95_error
+  INV      0      1.880e-08   1.865e-08 -1.05%        1.23%     3.15%
+  INV      1      5.103e-08   4.991e-08 -0.86%        1.15%     4.44%
+NAND2     00      2.341e-10   2.318e-10 -0.61%        0.74%     1.81%
+NAND2     01      3.891e-09   3.856e-09 -0.94%        0.96%     2.22%
+NAND2     10      1.894e-08   1.874e-08 -1.05%        1.21%     3.10%
+NAND2     11      1.014e-07   9.934e-08 -0.88%        1.15%     4.36%
+ NOR2     00      3.754e-08   3.725e-08 -1.05%        1.23%     3.14%
+ NOR2     01      5.064e-08   4.963e-08 -0.85%        1.13%     4.33%
+ NOR2     10      5.169e-09   5.121e-09 -1.27%        1.28%     3.84%
+ NOR2     11      3.037e-10   2.995e-10 -1.08%        1.19%     2.63%
+ AND2     00      5.123e-08   5.027e-08 -0.87%        1.15%     4.43%
+ AND2     01      5.702e-08   5.639e-08 -0.96%        1.10%     4.31%
+ AND2     10      7.837e-08   7.800e-08 -0.97%        1.05%     4.03%
+ AND2     11      1.315e-07   1.314e-07 -1.09%        1.15%     4.25%
+  OR2     00      1.038e-07   1.023e-07 -1.26%        1.32%     3.83%
+  OR2     01      7.818e-08   7.777e-08 -0.96%        1.04%     3.98%
+  OR2     10      2.695e-08   2.687e-08 -1.11%        1.21%     3.12%
+  OR2     11      1.916e-08   1.891e-08 -1.05%        1.18%     3.15%
+done in 4 s; outputs in /home/mrityunjay/dvd_projectv2/results/step3
+corners 0-9 done, 14 s
+corners 10-19 done, 26 s
+corners 20-29 done, 38 s
+corners 30-39 done, 51 s
+corners 40-49 done, 62 s
+corners 50-59 done, 75 s
+corners 60-69 done, 89 s
+corners 70-79 done, 102 s
+corners 80-89 done, 115 s
+corners 90-99 done, 128 s
+corners 100-109 done, 140 s
+corners 110-119 done, 152 s
+corners 120-129 done, 165 s
+corners 130-139 done, 177 s
+corners 140-149 done, 189 s
+corners 150-159 done, 202 s
+corners 160-169 done, 214 s
+corners 170-179 done, 227 s
+corners 180-189 done, 239 s
+corners 190-199 done, 252 s
+             circuit  simulations  spice_median_A  ml_median_A      bias  median_error  p95_error
+8-bit parity checker        51200        0.000001     0.000001 -0.012659      0.012927   0.043638
+composition only (sum of SPICE gate leakages vs circuit SPICE): median 0.26%, p95 1.24%, bias -0.26%
+done in 252 s; outputs in /home/mrityunjay/dvd_projectv2/results/step4
