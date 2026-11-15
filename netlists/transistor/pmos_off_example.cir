@@ -72,9 +72,9 @@
 +rshg    = 0.4             gbmin   = 1e-010          rbpb    = 5               rbpd    = 15            
 +rbps    = 15              rbdb    = 15              rbsb    = 15              ngcon   = 1
 M1 d g s b mdev W=1.57265064e-07 L=2.2e-08 rgatemod=0 rbodymod=0 AD=6.919662817e-15 AS=6.919662817e-15 PD=4.02530128e-07 PS=4.02530128e-07
-Vd d 0 0.4184839085
+Vd d 0 0.331945794
 Vg g 0 0.8824619744
-Vs s 0 0.007565039364
+Vs s 0 0.02760229763
 Vb b 0 0.8824619744
 .control
 set numdgt=15

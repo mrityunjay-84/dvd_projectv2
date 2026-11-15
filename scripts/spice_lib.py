@@ -132,7 +132,7 @@ CASES = {  # gate / body voltage as a function of VDD
 }
 
 
-RAIL_FRACTION = {"pmos_off": 0.60}    # share of rail-type samples per case (TA-approved; others uniform)
+RAIL_FRACTION = {}    # share of rail-type samples per case (TA-approved; others uniform)
 
 
 def rail_place(s, rng):
