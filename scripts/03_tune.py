@@ -76,7 +76,7 @@ def main():
               f"capped by free memory, ~{GB_PER_FIT[mtype]} GB per fit)", flush=True)
         rows += Parallel(n_jobs=nj, verbose=5)(delayed(_job)(*j) for j in js)
     res = pd.DataFrame(rows)
-    res.to_csv(OUT / "tuning_results.csv", index=False)
+    res.drop(columns="val_mean").to_csv(OUT / "tuning_results.csv", index=False)
 
     best = {}
     for (case, mtype, part), g in res.groupby(["case", "model_type", "part"]):

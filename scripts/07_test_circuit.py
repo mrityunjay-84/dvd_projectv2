@@ -99,7 +99,8 @@ def main():
                              p95_error=sim.rel_error.abs().quantile(0.95))])
     tab.to_csv(OUT / "circuit_results_table.csv", index=False)
     pd.set_option("display.width", 200)
-    print(tab.to_string(index=False))
+    print(tab.to_string(index=False, formatters={"spice_median_A": "{:.3e}".format,
+                                             "ml_median_A": "{:.3e}".format}))
     print(f"composition only (sum of SPICE gate leakages vs circuit SPICE): median "
           f"{100*sim.composition_error.abs().median():.2f}%, p95 {100*sim.composition_error.abs().quantile(0.95):.2f}%, "
           f"bias {100*sim.composition_error.median():+.2f}%")
